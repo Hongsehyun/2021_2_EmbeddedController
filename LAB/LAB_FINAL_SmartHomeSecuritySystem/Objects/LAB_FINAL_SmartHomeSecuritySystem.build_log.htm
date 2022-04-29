@@ -1,0 +1,339 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: •ÏVision V5.35.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Sehyun Hong, Handong Global University, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.35.0.2
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.35.0.2
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+C:\Users\sehye\source\repos\EC_2021\LAB\LAB_FINAL_SmartHomeSecuritySystem\LAB_FINAL_SmartHomeSecuritySystem.uvprojx
+Project File Date:  12/17/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+../../Lib/ecPWM.c(39): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        port->AFR[pin>>3] &= ~(0xF<<(4*(pin%8)));
+                          ~~ ^~~~~~~~~~~~~~~~~~~
+../../Lib/ecPWM.c(128): warning: implicit conversion turns floating-point number into integer: 'float' to 'uint32_t' (aka 'unsigned int') [-Wfloat-conversion]
+        uint32_t ccval = pulse_width_ms*fclk;   // width_ms *fclk;
+                 ~~~~~   ~~~~~~~~~~~~~~^~~~~
+../../Lib/ecPWM.c(151): warning: implicit conversion turns floating-point number into integer: 'float' to 'uint32_t' (aka 'unsigned int') [-Wfloat-conversion]
+        uint32_t ccval = pulse_width_us*fclk;   // width_ms *fclk;
+                 ~~~~~   ~~~~~~~~~~~~~~^~~~~
+../../Lib/ecPWM.c(165): warning: implicit conversion from 'unsigned int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+        float ccval = (pwm->timer->ARR+1)*duty;                                         // (ARR+1)*dutyRatio 
+                       ~~~~~~~~~~~~~~~^~ ~
+../../Lib/ecPWM.c(169): warning: implicit conversion turns floating-point number into integer: 'float' to 'uint32_t' (aka 'unsigned int') [-Wfloat-conversion]
+                case 1: TIMx->CCR1 = ccval; break;
+                                   ~ ^~~~~
+../../Lib/ecPWM.c(170): warning: implicit conversion turns floating-point number into integer: 'float' to 'uint32_t' (aka 'unsigned int') [-Wfloat-conversion]
+                case 2: TIMx->CCR2 = ccval; break;
+                                   ~ ^~~~~
+../../Lib/ecPWM.c(171): warning: implicit conversion turns floating-point number into integer: 'float' to 'uint32_t' (aka 'unsigned int') [-Wfloat-conversion]
+                case 3: TIMx->CCR3 = ccval; break;
+                                   ~ ^~~~~
+../../Lib/ecPWM.c(172): warning: implicit conversion turns floating-point number into integer: 'float' to 'uint32_t' (aka 'unsigned int') [-Wfloat-conversion]
+                case 4: TIMx->CCR4 = ccval; break;
+                                   ~ ^~~~~
+8 warnings generated.
+compiling ecPWM.c...
+../../Lib/ecADC.c(15): warning: implicit conversion changes signedness: 'uint32_t' (aka 'unsigned int') to 'int' [-Wsign-conversion]
+        int CHn = ADC_pinmap(port, pin);                        // ADC Channel <->Port/Pin mapping
+            ~~~   ^~~~~~~~~~~~~~~~~~~~~
+../../Lib/ecADC.c(67): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+        ADC1->SQR3 |= (CHn & ADC_SQR3_SQ1);     // Choose the channel to convert firstly
+                       ^~~ ~
+../../Lib/ecADC.c(94): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        ADC1->CR2 &= ~(1<<1);
+                  ~~ ^~~~~~~
+../../Lib/ecADC.c(101): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+        TIM_init(TIMx, msec);
+        ~~~~~~~~       ^~~~
+../../Lib/ecADC.c(105): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  TIM_period_ms(TIMx, msec);
+  ~~~~~~~~~~~~~       ^~~~
+../../Lib/ecADC.c(112): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+  TIMx->CCMR1 &= ~(7<<4);                               // OC1M : output compare 1 Mode 
+              ~~ ^~~~~~~
+../../Lib/ecADC.c(125): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        ADC1->CR2 |= (timer*2+2)<<24;                   // TIMx TRGO event (ADC : TIM2, TIM3 TRGO)
+                  ~~ ~~~~~~~~~~~^~~~
+../../Lib/ecADC.c(157): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        ADC1->SQR1 &= ~(0xF<<20);                                               // reset length of conversions in the regular channel   
+                   ~~ ^~~~~~~~~~
+../../Lib/ecADC.c(158): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        ADC1->SQR1 |= (length-1)<<20;                           // conversions in the regular channel conversion sequence
+                   ~~ ~~~~~~~~~~^~~~
+../../Lib/ecADC.c(163): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                        ADC1->SQR3 &= ~(0x1F<<i*5);                             // SQn clear bits
+                                   ~~ ^~~~~~~~~~~~
+../../Lib/ecADC.c(164): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                        ADC1->SQR3 |= seq[i]<<i*5;                              // Choose the channel to convert sequence
+                                   ~~ ~~~~~~^~~~~
+../../Lib/ecADC.c(167): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                        ADC1->SQR2 &= ~(0x1F<<((i-6)*5));      // SQn clear bits
+                                   ~~ ^~~~~~~~~~~~~~~~~~
+../../Lib/ecADC.c(168): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                        ADC1->SQR2 |= seq[i]<<((i-6)*5);                  // Choose the channel to convert sequence
+                                   ~~ ~~~~~~^~~~~~~~~~~
+../../Lib/ecADC.c(171): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                        ADC1->SQR1 &= ~(0x1F<<(i-12)*5);        // SQn clear bits
+                                   ~~ ^~~~~~~~~~~~~~~~~
+../../Lib/ecADC.c(172): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                        ADC1->SQR1 |= seq[i]<<(i-12)*5;         // Choose the channel to convert sequence
+                                   ~~ ~~~~~~^~~~~~~~~~
+../../Lib/ecADC.c(235): warning: non-void function does not return a value in all control paths [-Wreturn-type]
+}
+^
+../../Lib/ecADC.c(9): warning: no previous extern declaration for non-static variable 'result' [-Wmissing-variable-declarations]
+uint32_t result;
+         ^
+../../Lib/ecADC.c(9): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t result;
+^
+17 warnings generated.
+compiling ecADC.c...
+../../Lib/ecTIM.c(85): warning: variable 'prescaler' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
+        else if((RCC->CFGR & (3<<0)) == 0) { prescaler = 1600; }
+                ^~~~~~~~~~~~~~~~~~~~~~~~~
+../../Lib/ecTIM.c(90): note: uninitialized use occurs here
+        TIMx->PSC = prescaler-1;                                        
+                    ^~~~~~~~~
+../../Lib/ecTIM.c(85): note: remove the 'if' if its condition is always true
+        else if((RCC->CFGR & (3<<0)) == 0) { prescaler = 1600; }
+             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../Lib/ecTIM.c(80): note: initialize the variable 'prescaler' to silence this warning
+        uint32_t prescaler;
+                          ^
+                           = 0
+../../Lib/ecTIM.c(104): warning: variable 'prescaler' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
+        else if((RCC->CFGR & (3<<0)) == 0) { prescaler = 16; }
+                ^~~~~~~~~~~~~~~~~~~~~~~~~
+../../Lib/ecTIM.c(108): note: uninitialized use occurs here
+        TIMx->PSC = prescaler-1;                                        
+                    ^~~~~~~~~
+../../Lib/ecTIM.c(104): note: remove the 'if' if its condition is always true
+        else if((RCC->CFGR & (3<<0)) == 0) { prescaler = 16; }
+             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../Lib/ecTIM.c(99): note: initialize the variable 'prescaler' to silence this warning
+        uint32_t prescaler;
+                          ^
+                           = 0
+../../Lib/ecTIM.c(119): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+          uint16_t ARRval= (84/(prescaler)*usec); // 84MHz/1000000 us
+                   ~~~~~~   ~~~~~~~~~~~~~~^~~~~
+../../Lib/ecTIM.c(145): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+  port->AFR[pin>>3] &= ~(0xF<<(4*(pin%8)));
+                    ~~ ^~~~~~~~~~~~~~~~~~~
+../../Lib/ecTIM.c(230): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        TIMx->CCER &= ~(5<<(((ICn-1)*4)+1));                                                                            // Clear CCnNP/CCnP bits for ICn
+                   ~~ ^~~~~~~~~~~~~~~~~~~~~
+../../Lib/ecTIM.c(232): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                case RISE: TIMx->CCER &= ~(5<<(((ICn-1)*4)+1));  break; //rising:  00
+                                      ~~ ^~~~~~~~~~~~~~~~~~~~~
+../../Lib/ecTIM.c(234): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                case BOTH: TIMx->CCER |= (5<<(((ICn-1)*4)+1));   break; //both:    11
+                                      ~~  ~^~~~~~~~~~~~~~~~~
+../../Lib/ecTIM.c(245): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+        TIMx->PSC = 84*usec-1;                                            // Timer counter clock: 1us * usec
+                  ~ ~~~~~~~^~
+../../Lib/ecTIM.c(256): warning: non-void function does not return a value in all control paths [-Wreturn-type]
+}
+^
+../../Lib/ecTIM.c(254): warning: 'break' will never be executed [-Wunreachable-code-break]
+    case 4 : return ((TIMx->SR & TIM_SR_CC4IF) == TIM_SR_CC4IF);        break;
+                                                                        ^~~~~
+../../Lib/ecTIM.c(253): warning: 'break' will never be executed [-Wunreachable-code-break]
+    case 3 : return ((TIMx->SR & TIM_SR_CC3IF) == TIM_SR_CC3IF);        break;
+                                                                        ^~~~~
+../../Lib/ecTIM.c(252): warning: 'break' will never be executed [-Wunreachable-code-break]
+    case 2 : return ((TIMx->SR & TIM_SR_CC2IF) == TIM_SR_CC2IF);        break;
+                                                                        ^~~~~
+../../Lib/ecTIM.c(251): warning: 'break' will never be executed [-Wunreachable-code-break]
+    case 1 : return ((TIMx->SR & TIM_SR_CC1IF) == TIM_SR_CC1IF);        break;
+                                                                        ^~~~~
+13 warnings generated.
+compiling ecTIM.c...
+LAB_FINAL_SmartHomeSecuritySystem.c(9): warning: In file included from...
+../../Lib\EC_HAL.h(20): warning: In file included from...
+../../Lib/ecUART.h(40): warning: this function declaration is not a prototype [-Wstrict-prototypes]
+void UART2_init();
+               ^
+                void
+LAB_FINAL_SmartHomeSecuritySystem.c(144): warning: return type of 'main' is not 'int' [-Wmain-return-type]
+void main(void){
+^
+LAB_FINAL_SmartHomeSecuritySystem.c(144): note: change return type to 'int'
+void main(void){
+^~~~
+int
+LAB_FINAL_SmartHomeSecuritySystem.c(144): warning: function 'main' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+void main(void){
+               ^
+LAB_FINAL_SmartHomeSecuritySystem.c(267): warning: incompatible pointer types passing 'volatile uint8_t (*)[4]' to parameter of type 'uint8_t *' (aka 'unsigned char *') [-Wincompatible-pointer-types]
+        USART_write(USART6, &modebuf, 4);
+                            ^~~~~~~~
+../../Lib/ecUART.h(41): note: passing argument to parameter 'buffer' here
+void USART_write(USART_TypeDef* USARTx, uint8_t* buffer, uint32_t nBytes);
+                                                 ^
+LAB_FINAL_SmartHomeSecuritySystem.c(306): warning: passing 'uint8_t [4]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  sprintf(buf1, "%d", Flag.SIREN_ON);
+          ^~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+                                                  ^
+LAB_FINAL_SmartHomeSecuritySystem.c(307): warning: passing 'uint8_t [4]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  sprintf(buf2, "%d", VISITOR_LOG);
+          ^~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+                                                  ^
+LAB_FINAL_SmartHomeSecuritySystem.c(308): warning: passing 'uint8_t [4]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  sprintf(buf3, "%d", sound);
+          ^~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+                                                  ^
+LAB_FINAL_SmartHomeSecuritySystem.c(309): warning: passing 'uint8_t [4]' to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+  sprintf(buf4, "%d", dist);
+          ^~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h(417): note: passing argument to parameter here
+extern _ARMABI int sprintf(char * __restrict /*s*/, const char * __restrict /*format*/, ...) __attribute__((__nonnull__(1,2)));
+                                                  ^
+LAB_FINAL_SmartHomeSecuritySystem.c(312): warning: incompatible pointer types passing 'uint8_t (*)[4]' to parameter of type 'uint8_t *' (aka 'unsigned char *') [-Wincompatible-pointer-types]
+  USART_write(USART1,&buf1,4);
+                     ^~~~~
+../../Lib/ecUART.h(41): note: passing argument to parameter 'buffer' here
+void USART_write(USART_TypeDef* USARTx, uint8_t* buffer, uint32_t nBytes);
+                                                 ^
+LAB_FINAL_SmartHomeSecuritySystem.c(314): warning: incompatible pointer types passing 'uint8_t (*)[4]' to parameter of type 'uint8_t *' (aka 'unsigned char *') [-Wincompatible-pointer-types]
+  USART_write(USART1,&buf2,4);                                        
+                     ^~~~~
+../../Lib/ecUART.h(41): note: passing argument to parameter 'buffer' here
+void USART_write(USART_TypeDef* USARTx, uint8_t* buffer, uint32_t nBytes);
+                                                 ^
+LAB_FINAL_SmartHomeSecuritySystem.c(316): warning: incompatible pointer types passing 'uint8_t (*)[4]' to parameter of type 'uint8_t *' (aka 'unsigned char *') [-Wincompatible-pointer-types]
+  USART_write(USART1,&buf3,4);                                
+                     ^~~~~
+../../Lib/ecUART.h(41): note: passing argument to parameter 'buffer' here
+void USART_write(USART_TypeDef* USARTx, uint8_t* buffer, uint32_t nBytes);
+                                                 ^
+LAB_FINAL_SmartHomeSecuritySystem.c(318): warning: incompatible pointer types passing 'uint8_t (*)[4]' to parameter of type 'uint8_t *' (aka 'unsigned char *') [-Wincompatible-pointer-types]
+  USART_write(USART1,&buf4,4);                                       
+                     ^~~~~
+../../Lib/ecUART.h(41): note: passing argument to parameter 'buffer' here
+void USART_write(USART_TypeDef* USARTx, uint8_t* buffer, uint32_t nBytes);
+                                                 ^
+LAB_FINAL_SmartHomeSecuritySystem.c(361): warning: incompatible pointer to integer conversion passing 'volatile uint8_t *' (aka 'volatile unsigned char *') to parameter of type 'char' [-Wint-conversion]
+                                 sendBuffer('N',&modebuf[1], &modebuf[2]);
+                                                ^~~~~~~~~~~
+LAB_FINAL_SmartHomeSecuritySystem.c(263): note: passing argument to parameter 'flag' here
+void sendBuffer(char mode, char flag, char command){
+                                ^
+LAB_FINAL_SmartHomeSecuritySystem.c(361): warning: incompatible pointer to integer conversion passing 'volatile uint8_t *' (aka 'volatile unsigned char *') to parameter of type 'char' [-Wint-conversion]
+                                 sendBuffer('N',&modebuf[1], &modebuf[2]);
+                                                             ^~~~~~~~~~~
+LAB_FINAL_SmartHomeSecuritySystem.c(263): note: passing argument to parameter 'command' here
+void sendBuffer(char mode, char flag, char command){
+                                           ^
+LAB_FINAL_SmartHomeSecuritySystem.c(365): warning: incompatible pointer to integer conversion passing 'volatile uint8_t *' (aka 'volatile unsigned char *') to parameter of type 'char' [-Wint-conversion]
+                                 sendBuffer('S',&modebuf[1], &modebuf[2]);
+                                                ^~~~~~~~~~~
+LAB_FINAL_SmartHomeSecuritySystem.c(263): note: passing argument to parameter 'flag' here
+void sendBuffer(char mode, char flag, char command){
+                                ^
+LAB_FINAL_SmartHomeSecuritySystem.c(365): warning: incompatible pointer to integer conversion passing 'volatile uint8_t *' (aka 'volatile unsigned char *') to parameter of type 'char' [-Wint-conversion]
+                                 sendBuffer('S',&modebuf[1], &modebuf[2]);
+                                                             ^~~~~~~~~~~
+LAB_FINAL_SmartHomeSecuritySystem.c(263): note: passing argument to parameter 'command' here
+void sendBuffer(char mode, char flag, char command){
+                                           ^
+LAB_FINAL_SmartHomeSecuritySystem.c(427): warning: implicit conversion from 'volatile uint32_t' (aka 'volatile unsigned int') to 'float' may lose precision [-Wimplicit-int-float-conversion]
+      timeSt = TIM2->CCR3;                     // Capture TimeStart from CC3
+             ~ ~~~~~~^~~~
+LAB_FINAL_SmartHomeSecuritySystem.c(432): warning: implicit conversion from 'volatile uint32_t' (aka 'volatile unsigned int') to 'float' may lose precision [-Wimplicit-int-float-conversion]
+      timeEnd = TIM2->CCR4;                     // Capture TimeEnd from CC4
+              ~ ~~~~~~^~~~
+LAB_FINAL_SmartHomeSecuritySystem.c(433): warning: implicit conversion from 'unsigned int' to 'float' may lose precision [-Wimplicit-int-float-conversion]
+      timeInterval = PulseWidth*((timeEnd-timeSt)+(0XFFFF*ovf_cnt));
+                                                 ~ ~~~~~~^~~~~~~~
+LAB_FINAL_SmartHomeSecuritySystem.c(434): warning: implicit conversion turns floating-point number into integer: 'float' to 'int' [-Wfloat-conversion]
+      dist         = (float) timeInterval/58;   // Ultrasonic speed[m/s] * echo pulse duration[us]
+                   ~ ~~~~~~~~~~~~~~~~~~~~^~~
+LAB_FINAL_SmartHomeSecuritySystem.c(480): warning: implicit conversion changes signedness: 'volatile uint32_t' (aka 'volatile unsigned int') to 'int' [-Wsign-conversion]
+         reflect = ADC1->DR;
+                 ~ ~~~~~~^~
+LAB_FINAL_SmartHomeSecuritySystem.c(483): warning: implicit conversion changes signedness: 'volatile uint32_t' (aka 'volatile unsigned int') to 'int' [-Wsign-conversion]
+         sound = ADC1->DR;
+               ~ ~~~~~~^~
+LAB_FINAL_SmartHomeSecuritySystem.c(510): warning: passing 'volatile uint8_t *' (aka 'volatile unsigned char *') to parameter of type 'uint8_t *' (aka 'unsigned char *') discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+      USART_write(USART2,&mcu2Data,1); // transmit char to USART2
+                         ^~~~~~~~~
+../../Lib/ecUART.h(41): note: passing argument to parameter 'buffer' here
+void USART_write(USART_TypeDef* USARTx, uint8_t* buffer, uint32_t nBytes);
+                                                 ^
+LAB_FINAL_SmartHomeSecuritySystem.c(522): warning: passing 'volatile uint8_t [4]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        memset(modebuf, 0, sizeof(char) * maxBuf);       // To reset all value to 0. in buffer.
+               ^~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(321): note: passing argument to parameter here
+extern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+                                        ^
+LAB_FINAL_SmartHomeSecuritySystem.c(522): warning: implicit conversion changes signedness: 'volatile int' to 'unsigned int' [-Wsign-conversion]
+        memset(modebuf, 0, sizeof(char) * maxBuf);       // To reset all value to 0. in buffer.
+                                        ~ ^~~~~~
+25 warnings generated.
+compiling LAB_FINAL_SmartHomeSecuritySystem.c...
+linking...
+Program Size: Code=8658 RO-data=446 RW-data=40 ZI-data=1792  
+FromELF: creating hex file...
+".\Objects\LAB_FINAL_SmartHomeSecuritySystem.axf" - 0 Error(s), 63 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.15.0.pack
+                Keil.STM32F4xx_DFP.2.15.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Users\sehye\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Users\sehye\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+
+   * Component: Keil::Device:Startup:2.6.3
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f411xe.s
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Source file:   MDK\Device\Source\ARM\STM32F411xx_OPT.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

@@ -1,0 +1,16 @@
+--cpu=Cortex-M4.fp.sp
+".\objects\tutorial_timer_inputcapture.o"
+".\objects\ecexti.o"
+".\objects\ecgpio.o"
+".\objects\ecpwm.o"
+".\objects\ecrcc.o"
+".\objects\ecstepper.o"
+".\objects\ecsystick.o"
+".\objects\ectim.o"
+".\objects\ecuart.o"
+".\objects\startup_stm32f411xe.o"
+".\objects\system_stm32f4xx.o"
+--strict --scatter ".\Objects\Tutorial_TIMER_InputCapture.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\Tutorial_TIMER_InputCapture.map" -o .\Objects\Tutorial_TIMER_InputCapture.axf

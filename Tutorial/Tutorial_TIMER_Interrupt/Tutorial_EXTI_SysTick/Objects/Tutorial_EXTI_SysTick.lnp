@@ -1,0 +1,10 @@
+--cpu=Cortex-M4.fp.sp
+".\objects\main_1.o"
+".\objects\ecgpio.o"
+".\objects\ecrcc.o"
+".\objects\startup_stm32f411xe.o"
+".\objects\system_stm32f4xx.o"
+--strict --scatter ".\Objects\Tutorial_EXTI_SysTick.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\Tutorial_EXTI_SysTick.map" -o .\Objects\Tutorial_EXTI_SysTick.axf

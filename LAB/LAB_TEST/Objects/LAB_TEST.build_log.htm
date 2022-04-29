@@ -1,0 +1,227 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: •ÏVision V5.35.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Sehyun Hong, Handong Global University, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.35.0.2
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.35.0.2
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+C:\Users\sehye\source\repos\EC_2021\LAB\LAB_TEST\LAB_TEST.uvprojx
+Project File Date:  10/19/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+LAB_TEST.c(15): warning: In file included from...
+../../Lib\ecRCC.c(6): warning: no previous extern declaration for non-static variable 'EC_SYSCLK' [-Wmissing-variable-declarations]
+volatile int EC_SYSCLK=16000000;
+             ^
+../../Lib\ecRCC.c(6): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+volatile int EC_SYSCLK=16000000;
+         ^
+../../Lib\ecRCC.c(15): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+        while ( (RCC->CR & 0x00000002U) == 0 ) {;}
+                                                ^
+LAB_TEST.c(17): warning: In file included from...
+../../Lib\ecEXTI.c(28): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                SYSCFG->EXTICR[pin/4] &= ~(0xF << 4*(pin%4));
+                                      ~~ ^~~~~~~~~~~~~~~~~~~
+../../Lib\ecEXTI.c(29): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    SYSCFG->EXTICR[pin/4] |= (PA_x << 4*(pin%4));
+                          ~~  ~~~~~^~~~~~~~~~~~
+../../Lib\ecEXTI.c(33): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                SYSCFG->EXTICR[pin/4] &= ~(0xF << 4*(pin%4));
+                                      ~~ ^~~~~~~~~~~~~~~~~~~
+../../Lib\ecEXTI.c(38): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                SYSCFG->EXTICR[pin/4] &= ~(0xF << 4*(pin%4));
+                                      ~~ ^~~~~~~~~~~~~~~~~~~
+../../Lib\ecEXTI.c(39): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    SYSCFG->EXTICR[pin/4] |= (PC_x << 4*(pin%4));
+                          ~~  ~~~~~^~~~~~~~~~~~
+../../Lib\ecEXTI.c(43): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                SYSCFG->EXTICR[pin/4] &= ~(0xF << 4*(pin%4));
+                                      ~~ ^~~~~~~~~~~~~~~~~~~
+../../Lib\ecEXTI.c(44): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    SYSCFG->EXTICR[pin/4] |= (PD_x << 4*(pin%4));
+                          ~~  ~~~~~^~~~~~~~~~~~
+../../Lib\ecEXTI.c(48): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                SYSCFG->EXTICR[pin/4] &= ~(0xF << 4*(pin%4));
+                                      ~~ ^~~~~~~~~~~~~~~~~~~
+../../Lib\ecEXTI.c(49): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    SYSCFG->EXTICR[pin/4] |= (PE_x << 4*(pin%4));
+                          ~~  ~~~~~^~~~~~~~~~~~
+../../Lib\ecEXTI.c(53): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                SYSCFG->EXTICR[pin/4] &= ~(0xF << 4*(pin%4));
+                                      ~~ ^~~~~~~~~~~~~~~~~~~
+../../Lib\ecEXTI.c(54): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    SYSCFG->EXTICR[pin/4] |= (PH_x << 4*(pin%4));
+                          ~~  ~~~~~^~~~~~~~~~~~
+LAB_TEST.c(18): warning: In file included from...
+../../Lib\ecSysTick.c(49): warning: implicit declaration of function 'SysTick_enable' is invalid in C99 [-Wimplicit-function-declaration]
+    SysTick_enable();                        // Enable interrupt in NVIC
+    ^
+../../Lib\ecSysTick.c(18): warning: no previous prototype for function 'SysTick_init' [-Wmissing-prototypes]
+void SysTick_init(uint32_t msec) {
+     ^
+../../Lib\ecSysTick.c(18): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void SysTick_init(uint32_t msec) {
+^
+static 
+../../Lib\ecSysTick.c(53): warning: no previous prototype for function 'delay_ms' [-Wmissing-prototypes]
+void delay_ms(uint32_t msec) {
+     ^
+../../Lib\ecSysTick.c(53): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void delay_ms(uint32_t msec) {
+^
+static 
+../../Lib\ecSysTick.c(59): warning: no previous prototype for function 'SysTick_val' [-Wmissing-prototypes]
+uint32_t SysTick_val(void){
+         ^
+../../Lib\ecSysTick.c(59): note: declare 'static' if the function is not intended to be used outside of this translation unit
+uint32_t SysTick_val(void){
+^
+static 
+../../Lib\ecSysTick.c(64): warning: no previous prototype for function 'SysTick_reset' [-Wmissing-prototypes]
+void SysTick_reset(void) {
+     ^
+../../Lib\ecSysTick.c(64): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void SysTick_reset(void) {
+^
+static 
+../../Lib\ecSysTick.c(69): error: conflicting types for 'SysTick_enable'
+void SysTick_enable(void) {
+     ^
+../../Lib\ecSysTick.c(49): note: previous implicit declaration is here
+    SysTick_enable();                        // Enable interrupt in NVIC
+    ^
+../../Lib\ecSysTick.c(74): warning: no previous prototype for function 'SysTick_disable' [-Wmissing-prototypes]
+void SysTick_disable(void) {
+     ^
+../../Lib\ecSysTick.c(74): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void SysTick_disable(void) {
+^
+static 
+19 warnings and 1 error generated.
+compiling LAB_TEST.c...
+compiling ecSysTick.c...
+../../Lib/ecEXTI.c(28): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                SYSCFG->EXTICR[pin/4] &= ~(0xF << 4*(pin%4));
+                                      ~~ ^~~~~~~~~~~~~~~~~~~
+../../Lib/ecEXTI.c(29): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    SYSCFG->EXTICR[pin/4] |= (PA_x << 4*(pin%4));
+                          ~~  ~~~~~^~~~~~~~~~~~
+../../Lib/ecEXTI.c(33): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                SYSCFG->EXTICR[pin/4] &= ~(0xF << 4*(pin%4));
+                                      ~~ ^~~~~~~~~~~~~~~~~~~
+../../Lib/ecEXTI.c(38): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                SYSCFG->EXTICR[pin/4] &= ~(0xF << 4*(pin%4));
+                                      ~~ ^~~~~~~~~~~~~~~~~~~
+../../Lib/ecEXTI.c(39): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    SYSCFG->EXTICR[pin/4] |= (PC_x << 4*(pin%4));
+                          ~~  ~~~~~^~~~~~~~~~~~
+../../Lib/ecEXTI.c(43): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                SYSCFG->EXTICR[pin/4] &= ~(0xF << 4*(pin%4));
+                                      ~~ ^~~~~~~~~~~~~~~~~~~
+../../Lib/ecEXTI.c(44): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    SYSCFG->EXTICR[pin/4] |= (PD_x << 4*(pin%4));
+                          ~~  ~~~~~^~~~~~~~~~~~
+../../Lib/ecEXTI.c(48): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                SYSCFG->EXTICR[pin/4] &= ~(0xF << 4*(pin%4));
+                                      ~~ ^~~~~~~~~~~~~~~~~~~
+../../Lib/ecEXTI.c(49): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    SYSCFG->EXTICR[pin/4] |= (PE_x << 4*(pin%4));
+                          ~~  ~~~~~^~~~~~~~~~~~
+../../Lib/ecEXTI.c(53): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+                SYSCFG->EXTICR[pin/4] &= ~(0xF << 4*(pin%4));
+                                      ~~ ^~~~~~~~~~~~~~~~~~~
+../../Lib/ecEXTI.c(54): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+    SYSCFG->EXTICR[pin/4] |= (PH_x << 4*(pin%4));
+                          ~~  ~~~~~^~~~~~~~~~~~
+../../Lib/ecEXTI.c(21): warning: no previous prototype for function 'EXTI_init' [-Wmissing-prototypes]
+void EXTI_init(GPIO_TypeDef *port, unsigned int pin, unsigned int trig_type, unsigned int priority) {
+     ^
+../../Lib/ecEXTI.c(21): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void EXTI_init(GPIO_TypeDef *port, unsigned int pin, unsigned int trig_type, unsigned int priority) {
+^
+static 
+../../Lib/ecEXTI.c(85): warning: no previous prototype for function 'EXTI_enable' [-Wmissing-prototypes]
+void EXTI_enable(uint32_t pin){
+     ^
+../../Lib/ecEXTI.c(85): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void EXTI_enable(uint32_t pin){
+^
+static 
+../../Lib/ecEXTI.c(91): warning: no previous prototype for function 'EXTI_disable' [-Wmissing-prototypes]
+void EXTI_disable(uint32_t pin) { 
+     ^
+../../Lib/ecEXTI.c(91): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void EXTI_disable(uint32_t pin) { 
+^
+static 
+../../Lib/ecEXTI.c(97): warning: no previous prototype for function 'is_pending_EXTI' [-Wmissing-prototypes]
+uint32_t is_pending_EXTI(uint32_t pin) {
+         ^
+../../Lib/ecEXTI.c(97): note: declare 'static' if the function is not intended to be used outside of this translation unit
+uint32_t is_pending_EXTI(uint32_t pin) {
+^
+static 
+../../Lib/ecEXTI.c(103): warning: no previous prototype for function 'clear_pending_EXTI' [-Wmissing-prototypes]
+void clear_pending_EXTI(uint32_t pin) {
+     ^
+../../Lib/ecEXTI.c(103): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void clear_pending_EXTI(uint32_t pin) {
+^
+static 
+16 warnings generated.
+compiling ecEXTI.c...
+".\Objects\LAB_TEST.axf" - 1 Error(s), 35 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.15.0.pack
+                Keil.STM32F4xx_DFP.2.15.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Target_1
+  C:\Users\sehye\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Users\sehye\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+
+   * Component: Keil::Device:Startup:2.6.3
+      Source file:   MDK\Device\Source\ARM\STM32F411xx_OPT.s
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f411xe.s
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
+Target not created.
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>
