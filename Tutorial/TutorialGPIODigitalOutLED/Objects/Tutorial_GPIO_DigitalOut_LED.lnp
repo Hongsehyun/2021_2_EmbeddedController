@@ -1,8 +1,0 @@
---cpu=Cortex-M4.fp.sp
-".\objects\tutorial_gpio_digitalout_led.o"
-".\objects\startup_stm32f411xe.o"
-".\objects\system_stm32f4xx.o"
---strict --scatter ".\Objects\Tutorial_GPIO_DigitalOut_LED.sct"
---summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
---info sizes --info totals --info unused --info veneers
---list ".\Listings\Tutorial_GPIO_DigitalOut_LED.map" -o .\Objects\Tutorial_GPIO_DigitalOut_LED.axf
